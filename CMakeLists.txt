@@ -14,4 +14,7 @@ include_directories(${COLORCPP_INCLUDE})
 add_library(${COLORCPP_LIBRARY} ${SOURCE_DIRECTORY}/color.cpp)
 target_compile_features(${COLORCPP_LIBRARY} PRIVATE cxx_auto_type)
 
+add_executable(test_colorcpp ${SOURCE_DIRECTORY}/test.cpp ${SOURCE_DIRECTORY}/color.cpp)
+target_compile_features(test_colorcpp PRIVATE cxx_auto_type)
+
 

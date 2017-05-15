@@ -21,7 +21,7 @@ struct ColorRGB {
 struct ColorRGBA {
   double r, g, b, a;
   ColorRGBA(double red = 0.0, double green = 0.0, double blue = 0.0,
-            double alpha = 0.0)
+            double alpha = 1.0)
       : r(red), g(green), b(blue), a(alpha) {}
   ColorRGBA(const ColorRGB &color);
   ColorRGBA(const ColorRGB256 &color);
@@ -46,7 +46,7 @@ struct ColorRGB256 {
 struct ColorRGBA256 {
   double r, g, b, a;
   ColorRGBA256(double red = 0.0, double green = 0.0, double blue = 0.0,
-               double alpha = 0.0)
+               double alpha = 1.0)
       : r(red), g(green), b(blue), a(alpha) {}
   ColorRGBA256(const ColorRGB &color);
   ColorRGBA256(const ColorRGB256 &color);
@@ -84,6 +84,8 @@ ColorRGBA lighten(const ColorRGBA color, double amount);
 ColorRGBA darken(const ColorRGBA color, double amount);
 
 ColorRGBA greyscale(const ColorRGBA color);
+
+std::string hex(const ColorRGB256 color);
 }
 
 #endif

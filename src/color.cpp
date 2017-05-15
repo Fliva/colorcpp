@@ -1,5 +1,7 @@
 #include "color.hpp"
 #include <algorithm>
+#include <ios>
+#include <sstream>
 namespace colorcpp {
 ColorRGB::ColorRGB(const ColorRGB &color) {
   r = color.r;
@@ -293,5 +295,23 @@ ColorRGBA greyscale(const ColorRGBA color) {
   ColorHSL tmp = to_hsl(color);
   tmp.s = 0;
   return to_rgb(tmp);
+}
+
+std::string hex(int element) {
+  std::stringstream sstream;
+  sstream << std::hex << element;
+
+  auto val = sstream.str();
+  if (val.size() == 0) {
+    return "00";
+  }
+  if (val.size() == 1) {
+    return "0" + val;
+  }
+  return val;
+}
+
+std::string hex(const ColorRGB256 color) {
+  return hex(color.r) + hex(color.g) + hex(color.b);
 }
 }

@@ -33,6 +33,12 @@ ColorRGB::ColorRGB(std::string &rgb) {
   g = color.g / 255.0f;
   b = color.b / 255.0f;
 }
+ColorRGBA::ColorRGBA(const ColorRGB &color) {
+  r = color.r;
+  g = color.g;
+  b = color.b;
+  a = 1.0f;
+}
 
 ColorRGBA::ColorRGBA(const ColorRGB256 &color) {
   r = color.r / 255.0f;

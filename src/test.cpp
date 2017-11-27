@@ -2,7 +2,7 @@
 #include "color.hpp"
 
 int main(int argc, char *argv[]) {
-  std::string rgb1 = "ff0000";
+  std::string rgb1 = "#ff0000";
   std::string rgb2 = "0000ff";
   colorcpp::ColorRGBA color1(rgb1);
   colorcpp::ColorRGBA color2(rgb2);

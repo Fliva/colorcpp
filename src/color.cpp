@@ -105,7 +105,8 @@ ColorRGB256::ColorRGB256(const ColorHSL &color) {
   g = rgb.g * 255.0f;
   b = rgb.b * 255.0f;
 }
-ColorRGB256::ColorRGB256(std::string &rgb) {
+ColorRGB256::ColorRGB256(std::string rgb) {
+  rgb.erase(std::remove(rgb.begin(), rgb.end(), '#'), rgb.end());
   int num = std::stoi(rgb, 0, 16);
   r = num / 0x10000;
   g = ((num / 0x100) % 0x100);

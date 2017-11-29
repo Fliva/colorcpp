@@ -40,7 +40,7 @@ struct ColorRGB256 {
   ColorRGB256(const ColorRGBA &color);
   ColorRGB256(const ColorRGBA256 &color);
   ColorRGB256(const ColorHSL &color);
-  ColorRGB256(std::string &rgb);
+  ColorRGB256(std::string rgb);
 };
 
 struct ColorRGBA256 {

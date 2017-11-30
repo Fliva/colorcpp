@@ -297,6 +297,11 @@ ColorRGBA greyscale(const ColorRGBA color) {
   return to_rgb(tmp);
 }
 
+float luminance(const ColorRGBA color) {
+  float val = color.r*0.299f + color.g*0.587 + color.b*0.114;
+  return val * color.a;
+}
+
 std::string hex(int element) {
   std::stringstream sstream;
   sstream << std::hex << element;
@@ -311,7 +316,9 @@ std::string hex(int element) {
   return val;
 }
 
+
 std::string hex(const ColorRGB256 color) {
   return hex(color.r) + hex(color.g) + hex(color.b);
 }
+
 }

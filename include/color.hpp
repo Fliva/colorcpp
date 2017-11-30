@@ -85,6 +85,8 @@ ColorRGBA darken(const ColorRGBA color, double amount);
 
 ColorRGBA greyscale(const ColorRGBA color);
 
+float luminance(const ColorRGBA color);
+
 std::string hex(const ColorRGB256 color);
 }
 
